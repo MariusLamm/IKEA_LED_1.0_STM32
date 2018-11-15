@@ -3,8 +3,8 @@
 PCB with STM32 and PCA9685 to drive LEDs from IKEA LEDLJUS (24 or 64). 
 
 ### Built With
-> GNU ARM Embedded Toolchain Version 7-2018-q2-update
-> GNU Make 3.81
+- GNU ARM Embedded Toolchain Version 7-2018-q2-update
+- GNU Make 3.81
 
 ### Versioning
 V1.00
