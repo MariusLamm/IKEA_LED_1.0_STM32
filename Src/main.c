@@ -202,6 +202,7 @@ void _Error_Handler(char *file, int line)
   /* User can add his own implementation to report the HAL error return state */
   while(1)
   {
+    PrintToUART("ERROR: %s line:%d\n",file,line);
   }
   /* USER CODE END Error_Handler_Debug */
 }
