@@ -101,13 +101,13 @@ int main(void)
   MX_RTC_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-
   pca9685_init();
 
   /* USER CODE END 2 */
 
   /* Infinite loop */
 
+  //Set Pin to Test
   pca9685_set_pin(1,2048);
 
   while (1)
