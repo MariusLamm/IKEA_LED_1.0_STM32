@@ -124,12 +124,17 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
 
 /* USER CODE BEGIN 1 */
 //write to UART 2
-void debugPrint(char _out[])
+void PrintToUART(char _out[])
 {
   HAL_UART_Transmit(&huart2, (uint8_t *) _out, strlen(_out), 10);
 }
 
+void ReadFromUART(void)
+{
 
+
+
+}
 
 /* USER CODE END 1 */
 

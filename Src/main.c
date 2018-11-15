@@ -113,25 +113,6 @@ int main(void)
   while (1)
   {
 
-    debugPrint("IKEA LED V1.00\n");
-    debugPrint("r RTC \n");
-    debugPrint("s set ON time of LED string\n");
-    debugPrint("type 'comannd' -h for help\n");
-    debugPrint("type command:\n");
-    debugRead();
-    char in[25];
-    HAL_UART_Receive(&huart2, (uint8_t *)in, 25, 1000);
-    debugPrint("\n");
-
-
-    if(in[0]=="r"){
-
-    }
-
-    if(in[0]=="s"){
-      debugPrint("command to set led: s, LED(1-10), brightness(0-255) \n");
-      debugPrint("e.g.: "s,1,100" set LED1 to brightness 100\n");
-    }
 
 
 
