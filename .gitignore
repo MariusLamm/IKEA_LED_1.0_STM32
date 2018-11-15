@@ -1,6 +1,6 @@
-.d
-.lst
-.o
-.mxproject
-.json
-.Id
+*.d
+*.lst
+*.o
+*.mxproject
+*.json
+*.Id
