@@ -8,7 +8,7 @@
 #include <stdint.h>
 #include "main.h"
 
-#define PCA9685_I2C_ADDR					0x40        /**< PCA9685 I2C slave address */
+#define PCA9685_I2C_ADDR					0x80        /**< PCA9685 I2C slave address */
 
 #define PCA9685_INT_OSC_CLK				25000000UL  /**< Clock frequency of the internal oscillator */
 
