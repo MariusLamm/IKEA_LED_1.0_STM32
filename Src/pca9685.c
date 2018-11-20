@@ -49,13 +49,13 @@ set_OutputEnable_PCA9685();
 	/* Enable register auto-increment */
 	i2c_write_reg8(PCA9685_I2C_ADDR, PCA9685_MODE1, 0x20);
 	/* Outputs configured with a totem pole structure, low when disabled */
-	i2c_write_reg8(PCA9685_I2C_ADDR, PCA9685_MODE2, 0x10);
-	// INVRT = 0, OUTDRV = 1, OUTNE = 01 (MODE2 register bits)
+	i2c_write_reg8(PCA9685_I2C_ADDR, PCA9685_MODE2, 0x05);
+	// Set INVRT = 0, OUTDRV = 1, OUTNE = 01 (MODE2 register bits)
 
 
 	/* Turn all pins off */
-	for (i = 0; i < 16; i++)
-			pca9685_set_pin(i, 0);
+	//for (i = 0; i < 16; i++)
+	//		pca9685_set_pin(i, 0);
 }
 
 /**

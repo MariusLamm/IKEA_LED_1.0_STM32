@@ -104,16 +104,16 @@ int main(void)
   pca9685_init();
 
   /* USER CODE END 2 */
-
   /* Infinite loop */
 
   //Set Pin to Test
-  pca9685_set_pin(1,2048);
+  pca9685_set_pin(0,3000);
+  pca9685_set_pin(1,3000);
+  pca9685_set_pin(2,3000);
 
 
   while (1)
   {
-    
 
 
 
