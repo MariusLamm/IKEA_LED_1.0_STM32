@@ -109,12 +109,11 @@ int main(void)
 
   //Set Pin to Test
   pca9685_set_pin(1,2048);
-  //set output enable
-  HAL_GPIO_WritePin(OutputEnable_GPIO_Port,OutputEnable_Pin, 0);
+
 
   while (1)
   {
-    HAL_GPIO_WritePin(OutputEnable_GPIO_Port,OutputEnable_Pin, 0);
+    
 
 
 

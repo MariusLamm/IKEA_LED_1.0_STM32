@@ -88,7 +88,7 @@ void MX_GPIO_Init(void)
 /* USER CODE BEGIN 2 */
 void set_OutputEnable_PCA9685(void)
 {
-  HAL_GPIO_WritePin(OutputEnable_GPIO_Port, OutputEnable_Pin, 1);
+  HAL_GPIO_WritePin(OutputEnable_GPIO_Port, OutputEnable_Pin, 0);
 }
 
 /* USER CODE END 2 */

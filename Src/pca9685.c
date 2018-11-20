@@ -1,5 +1,7 @@
 #include "i2c.h"
 #include "pca9685.h"
+#include "main.h"
+#include "gpio.h"
 
 static uint8_t i2c_read_reg8(uint8_t address, uint8_t reg)
 {
@@ -48,6 +50,7 @@ set_OutputEnable_PCA9685();
 	i2c_write_reg8(PCA9685_I2C_ADDR, PCA9685_MODE1, 0x20);
 	/* Outputs configured with a totem pole structure, low when disabled */
 	i2c_write_reg8(PCA9685_I2C_ADDR, PCA9685_MODE2, 0x10);
+	// INVRT = 0, OUTDRV = 1, OUTNE = 01 (MODE2 register bits)
 
 
 	/* Turn all pins off */
@@ -132,14 +135,4 @@ void pca9685_set_pin(uint8_t index, uint16_t val)
 		pca9685_set_pwm(index, 0, 4096);
 	else
 		pca9685_set_pwm(index, 0, val);
-}
-
-/**
- * @brief      Enables or disables all PWM outputs.
- *
- * @param[in]  enabled  The flag specifying whether to enable or disable the outputs.
- */
-void pca9685_set_output_enable(uint8_t enabled)
-{
-	/* TODO */
 }
