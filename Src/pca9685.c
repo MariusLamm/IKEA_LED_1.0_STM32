@@ -54,8 +54,8 @@ set_OutputEnable_PCA9685();
 
 
 	/* Turn all pins off */
-	//for (i = 0; i < 16; i++)
-	//		pca9685_set_pin(i, 0);
+	for (i = 0; i < 16; i++)
+			pca9685_set_pin(i, 0);
 }
 
 /**
@@ -135,4 +135,11 @@ void pca9685_set_pin(uint8_t index, uint16_t val)
 		pca9685_set_pwm(index, 0, 4096);
 	else
 		pca9685_set_pwm(index, 0, val);
+}
+
+
+
+void set_OutputEnable_PCA9685(void)
+{
+  HAL_GPIO_WritePin(OutputEnable_GPIO_Port, OutputEnable_Pin, 0);
 }

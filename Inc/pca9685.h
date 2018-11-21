@@ -50,6 +50,7 @@ void pca9685_init(void);
 void pca9685_set_frequency(uint16_t frequency);
 void pca9685_set_pwm(uint8_t index, uint16_t ticks_on, uint16_t ticks_off);
 void pca9685_set_pin(uint8_t index, uint16_t val);
+void set_OutputEnable_PCA9685(void);
 
 #ifdef __cplusplus
 }

@@ -59,7 +59,7 @@
 void MX_GPIO_Init(void);
 
 /* USER CODE BEGIN Prototypes */
-void set_OutputEnable_PCA9685(void);
+
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus
