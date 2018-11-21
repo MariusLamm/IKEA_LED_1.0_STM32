@@ -1,6 +1,7 @@
 #include "main.h"
 #include "stm32f0xx_hal.h"
 #include "rotaryencoder.h"
+#include "pca9685.h"
 
 /*
 Rotary encoders are devices which are connected to the CPU or other
@@ -30,46 +31,75 @@ For more information, please see
 	http://en.wikipedia.org/wiki/Rotary_encoder
 */
 
-void ReadEncoderButton(void)
+
+uint8_t Rot_A_State =0;
+uint8_t Rot_B_State =0;
+
+
+void setRotAState(void)
 {
-
-
+  //toggle Rot_A_State
+  Rot_A_State = 1;
+  checkRotationDirection();
 }
 
-void ReadRotaryEncoder(void)
+void setRotBState(void)
 {
-
-
+  //toggle Rot_B_State
+  Rot_B_State = 1;
+  checkRotationDirection();
 }
 
-
-
-
-
-/*
- * This function converts an unsigned binary
- * number to reflected binary Gray code.
- *
- * The operator >> is shift right. The operator ^ is exclusive or.
- */
-uint8_t BinaryToGray(uint8_t num)
+void checkRotationDirection(void)
 {
-    return num ^ (num >> 1);
-}
+  if((Rot_B_State == 1) || (Rot_A_State == 1)){
 
-/*
- * This function converts a reflected binary
- * Gray code number to a binary number.
- * Each Gray code bit is exclusive-ored with all
- * more significant bits.
- */
-uint8_t GrayToBinary(uint8_t num)
-{
-    unsigned int mask = num >> 1;
-    while (mask != 0)
-    {
-        num = num ^ mask;
-        mask = mask >> 1;
+    //encoder rotats Right
+    if(Rot_A_State == 0){
+      PrintToUART("ROT_A\n");
+      RotaryEncoderRight();
     }
-    return num;
+    //encoder rotats Left
+    if(Rot_B_State == 0){
+      PrintToUART("ROT_B\n");
+      RotaryEncoderLeft();
+    }
+  }
+  Rot_A_State = 0;
+  Rot_B_State = 0;
+}
+
+
+/*Index for LEDstring*/
+uint8_t LEDIndex =0;
+/*Value for LEDstring*/
+uint32_t LEDValue =3000;
+/*Set inital Values*/
+
+/*If encoder Button is Pressed do something*/
+void EncoderButtonPressed(void)
+{
+  if(LEDIndex == 9){
+    LEDIndex = 0;
+  }
+  pca9685_set_pin(LEDIndex,LEDValue);
+  LEDIndex++;
+}
+
+void RotaryEncoderRight(void)
+{
+  if(LEDValue > 4000){
+      LEDValue = 4000;
+  }
+  pca9685_set_pin(LEDIndex,LEDValue);
+  LEDValue=LEDValue+100;
+}
+
+void RotaryEncoderLeft(void)
+{
+  if(LEDValue < 0){
+      LEDValue = 0;
+  }
+  pca9685_set_pin(LEDIndex,LEDValue);
+  LEDValue=LEDValue-100;
 }

@@ -4,11 +4,13 @@
 
 
 /* USER CODE BEGIN Prototypes */
-uint8_t BinaryToGray(uint8_t num);
-uint8_t GrayToBinary(uint8_t num);
+void setRotAState(void);
+void setRotBState(void);
+void checkRotationDirection(void);
 
-void ReadRotaryEncoder(void);
-void ReadEncoderButton(void);
+void EncoderButtonPressed(void);
+void RotaryEncoderRight(void);
+void RotaryEncoderLeft(void);
 
 
 /* USER CODE END Prototypes */

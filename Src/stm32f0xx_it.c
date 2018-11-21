@@ -37,12 +37,13 @@
 
 /* USER CODE BEGIN 0 */
 #include "pca9685.h"
+#include "rotaryencoder.h"
 /* USER CODE END 0 */
 
 /* External variables --------------------------------------------------------*/
 
 /******************************************************************************/
-/*            Cortex-M0 Processor Interruption and Exception Handlers         */
+/*            Cortex-M0 Processor Interruption and Exception Handlers         */ 
 /******************************************************************************/
 
 /**
@@ -130,22 +131,23 @@ void SysTick_Handler(void)
 void EXTI4_15_IRQHandler(void)
 {
   /* USER CODE BEGIN EXTI4_15_IRQn 0 */
+
   /*Interrupt Handler for Button1*/
   if(__HAL_GPIO_EXTI_GET_FLAG(GPIO_PIN_7))
   {
-    pca9685_set_pin(0,3000);
+    EncoderButtonPressed();
   }
 
   /*Interrupt Handler for Rot A*/
   if(__HAL_GPIO_EXTI_GET_FLAG(GPIO_PIN_8))
   {
-    pca9685_set_pin(0,3000);
+    setRotAState();
   }
 
   /*Interrupt Handler for Rot B*/
   if(__HAL_GPIO_EXTI_GET_FLAG(GPIO_PIN_9))
   {
-    pca9685_set_pin(0,3000);
+    setRotBState();
   }
 
   /* USER CODE END EXTI4_15_IRQn 0 */
