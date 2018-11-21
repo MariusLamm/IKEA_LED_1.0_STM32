@@ -6,7 +6,7 @@
   ******************************************************************************
   ** This notice applies to any and all portions of this file
   * that are not between comment pairs USER CODE BEGIN and
-  * USER CODE END. Other portions of this file, whether 
+  * USER CODE END. Other portions of this file, whether
   * inserted by the user or by software development tools
   * are owned by their respective copyright owners.
   *
@@ -57,7 +57,7 @@ void MX_RTC_Init(void)
   RTC_TimeTypeDef sTime;
   RTC_DateTypeDef sDate;
 
-    /**Initialize RTC Only 
+    /**Initialize RTC Only
     */
   hrtc.Instance = RTC;
   hrtc.Init.HourFormat = RTC_HOURFORMAT_24;
@@ -71,7 +71,7 @@ void MX_RTC_Init(void)
     _Error_Handler(__FILE__, __LINE__);
   }
 
-    /**Initialize RTC and set the Time and Date 
+    /**Initialize RTC and set the Time and Date
     */
   sTime.Hours = 0x0;
   sTime.Minutes = 0x0;
@@ -125,7 +125,7 @@ void HAL_RTC_MspDeInit(RTC_HandleTypeDef* rtcHandle)
 
   /* USER CODE END RTC_MspDeInit 1 */
   }
-} 
+}
 
 /* USER CODE BEGIN 1 */
 
@@ -188,10 +188,10 @@ void RTC_CalendarShow(uint8_t *showtime, uint8_t *showdate)
   /* Get the RTC current Date */
   HAL_RTC_GetDate(&hrtc, &sdatestructureget, RTC_FORMAT_BIN);
 
-  /* Display time Format: hh:mm:ss */
-  //PrintToUART((char*)showtime,"%02d:%02d:%02d",stimestructureget.Hours, stimestructureget.Minutes, stimestructureget.Seconds);
-  /* Display date Format: mm-dd-yy */
-  //PrintToUART((char*)showdate,"%02d-%02d-%02d",sdatestructureget.Month, sdatestructureget.Date, 2000 + sdatestructureget.Year);
+
+  showtime[0] = stimestructureget.Hours;
+  showtime[1] = stimestructureget.Minutes;
+  showtime[2] = stimestructureget.Seconds;
 
 }
 

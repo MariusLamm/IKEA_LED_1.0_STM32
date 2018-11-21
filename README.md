@@ -3,6 +3,10 @@
 PCB with STM32 and PCA9685 to drive LEDs from IKEA LEDLJUS (24 or 64).
 ![img](https://github.com/MariusLamm/IKEA_LED_1.0_STM32/blob/master/IKEA_LED_PCB.PNG)
 
+##TODO Hardware:
+- **LDO gets hot**
+- **I2C SDA and SCL are reversed**
+
 ### Built With
 - GNU ARM Embedded Toolchain Version 7-2018-q2-update
 - GNU Make 3.81
