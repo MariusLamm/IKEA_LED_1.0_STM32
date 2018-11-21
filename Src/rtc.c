@@ -41,6 +41,7 @@
 #include "rtc.h"
 
 /* USER CODE BEGIN 0 */
+#include "usart.h"
 
 /* Buffers used for displaying Time and Date */
 uint8_t aShowTime[50] = {0};
@@ -69,9 +70,6 @@ void MX_RTC_Init(void)
   {
     _Error_Handler(__FILE__, __LINE__);
   }
-  /* USER CODE BEGIN RTC_Init 2 */
-
-  /* USER CODE END RTC_Init 2 */
 
     /**Initialize RTC and set the Time and Date
     */
@@ -84,9 +82,6 @@ void MX_RTC_Init(void)
   {
     _Error_Handler(__FILE__, __LINE__);
   }
-  /* USER CODE BEGIN RTC_Init 3 */
-
-  /* USER CODE END RTC_Init 3 */
 
   sDate.WeekDay = RTC_WEEKDAY_MONDAY;
   sDate.Month = RTC_MONTH_JANUARY;
@@ -97,16 +92,13 @@ void MX_RTC_Init(void)
   {
     _Error_Handler(__FILE__, __LINE__);
   }
-  /* USER CODE BEGIN RTC_Init 4 */
-
-  /* USER CODE END RTC_Init 4 */
 
 }
 
-void HAL_RTC_MspInit(RTC_HandleTypeDef* hrtc)
+void HAL_RTC_MspInit(RTC_HandleTypeDef* rtcHandle)
 {
 
-  if(hrtc->Instance==RTC)
+  if(rtcHandle->Instance==RTC)
   {
   /* USER CODE BEGIN RTC_MspInit 0 */
 
@@ -119,10 +111,10 @@ void HAL_RTC_MspInit(RTC_HandleTypeDef* hrtc)
   }
 }
 
-void HAL_RTC_MspDeInit(RTC_HandleTypeDef* hrtc)
+void HAL_RTC_MspDeInit(RTC_HandleTypeDef* rtcHandle)
 {
 
-  if(hrtc->Instance==RTC)
+  if(rtcHandle->Instance==RTC)
   {
   /* USER CODE BEGIN RTC_MspDeInit 0 */
 
@@ -197,9 +189,9 @@ void RTC_CalendarShow(uint8_t *showtime, uint8_t *showdate)
   HAL_RTC_GetDate(&hrtc, &sdatestructureget, RTC_FORMAT_BIN);
 
   /* Display time Format: hh:mm:ss */
-  debugPrint((char*)showtime,"%02d:%02d:%02d",stimestructureget.Hours, stimestructureget.Minutes, stimestructureget.Seconds);
+  //PrintToUART((char*)showtime,"%02d:%02d:%02d",stimestructureget.Hours, stimestructureget.Minutes, stimestructureget.Seconds);
   /* Display date Format: mm-dd-yy */
-  debugPrint((char*)showdate,"%02d-%02d-%02d",sdatestructureget.Month, sdatestructureget.Date, 2000 + sdatestructureget.Year);
+  //PrintToUART((char*)showdate,"%02d-%02d-%02d",sdatestructureget.Month, sdatestructureget.Date, 2000 + sdatestructureget.Year);
 
 }
 

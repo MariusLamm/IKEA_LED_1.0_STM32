@@ -53,10 +53,13 @@
 #define OutputEnable_GPIO_Port GPIOB
 #define Button1_Pin GPIO_PIN_7
 #define Button1_GPIO_Port GPIOB
+#define Button1_EXTI_IRQn EXTI4_15_IRQn
 #define Rot_A_Pin GPIO_PIN_8
 #define Rot_A_GPIO_Port GPIOB
+#define Rot_A_EXTI_IRQn EXTI4_15_IRQn
 #define Rot_B_Pin GPIO_PIN_9
 #define Rot_B_GPIO_Port GPIOB
+#define Rot_B_EXTI_IRQn EXTI4_15_IRQn
 
 /* ########################## Assert Selection ############################## */
 /**

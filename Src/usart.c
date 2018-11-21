@@ -39,11 +39,10 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "usart.h"
-#include "string.h"
 #include "gpio.h"
 
 /* USER CODE BEGIN 0 */
-
+#include "string.h"
 /* USER CODE END 0 */
 
 UART_HandleTypeDef huart2;

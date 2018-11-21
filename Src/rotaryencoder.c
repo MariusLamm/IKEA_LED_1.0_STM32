@@ -32,23 +32,13 @@ For more information, please see
 
 void ReadEncoderButton(void)
 {
-  HAL_GPIO_ReadPin(Button1_GPIO_Port, Button1_Pin);
-  if()
-  {
 
 
-  }
 }
 
 void ReadRotaryEncoder(void)
 {
-  uint8_t rotA, rotB;
 
-  rotA = HAL_GPIO_ReadPin(Rot_A_GPIO_Port, Rot_A_Pin);
-  rotB = HAL_GPIO_ReadPin(Rot_B_GPIO_Port, Rot_B_Pin);
-
-  GrayToBinary(rotA);
-  GrayToBinary(rotB);
 
 }
 
