@@ -3,6 +3,8 @@
 #include "rotaryencoder.h"
 #include "pca9685.h"
 
+#define STEP 20
+
 /*
 Rotary encoders are devices which are connected to the CPU or other
 peripherals with two wires. The outputs are phase-shifted by 90 degrees
@@ -35,45 +37,69 @@ For more information, please see
 uint8_t Rot_A_State =0;
 uint8_t Rot_B_State =0;
 
+uint8_t Last_Rot_A_State =1;
+uint8_t Last_Rot_B_State =1;
+
+uint8_t sequenz_A=0;
+uint8_t sequenz_B=0;
+
+uint8_t position=0;
+
 
 void setRotAState(void)
 {
-  //toggle Rot_A_State
-  Rot_A_State = 1;
-  checkRotationDirection();
+  RotaryEncoderRight();
 }
 
 void setRotBState(void)
 {
-  //toggle Rot_B_State
-  Rot_B_State = 1;
-  checkRotationDirection();
+  RotaryEncoderRight();
 }
+
+
+
+
 
 void checkRotationDirection(void)
 {
-  if((Rot_B_State == 1) || (Rot_A_State == 1)){
 
-    //encoder rotats Right
-    if(Rot_A_State == 0){
-      PrintToUART("ROT_A\n");
-      RotaryEncoderRight();
-    }
-    //encoder rotats Left
-    if(Rot_B_State == 0){
-      PrintToUART("ROT_B\n");
-      RotaryEncoderLeft();
-    }
+  uint8_t Rot_A_State =HAL_GPIO_ReadPin(Rot_A_GPIO_Port,Rot_A_Pin);
+  uint8_t Rot_B_State =HAL_GPIO_ReadPin(Rot_B_GPIO_Port,Rot_B_Pin);
+
+  // Record the A and B signals in seperate sequences
+  sequenz_A <<= 1;
+  sequenz_A |= Rot_A_State;
+
+  sequenz_B <<= 1;
+  sequenz_B |= Rot_B_State;
+
+  // Mask the MSB four bits
+  sequenz_A &= 0b00001111;
+  sequenz_B &= 0b00001111;
+
+  // Compare the recorded sequence with the expected sequence
+  if (sequenz_A == 0b00001001 && sequenz_B == 0b00000011) {
+    position++;
   }
-  Rot_A_State = 0;
-  Rot_B_State = 0;
+
+  if (sequenz_A == 0b00000011 && sequenz_B == 0b00001001) {
+    position++;
+  }
+
+  char string[20];
+  sprintf(string,"%d",position);
+  PrintToUART(string);
+  PrintToUART("\n");
+
+
+
 }
 
 
 /*Index for LEDstring*/
 uint8_t LEDIndex =0;
 /*Value for LEDstring*/
-uint32_t LEDValue =3000;
+uint32_t LEDValue =0;
 /*Set inital Values*/
 
 /*If encoder Button is Pressed do something*/
@@ -83,16 +109,28 @@ void EncoderButtonPressed(void)
     LEDIndex = 0;
   }
   pca9685_set_pin(LEDIndex,LEDValue);
+
+  char string[20];
+  sprintf(string,"%d",LEDIndex);
+  PrintToUART(string);
+  PrintToUART("\n");
+
   LEDIndex++;
 }
 
 void RotaryEncoderRight(void)
 {
   if(LEDValue > 4000){
-      LEDValue = 4000;
+      LEDValue = 0;
   }
   pca9685_set_pin(LEDIndex,LEDValue);
-  LEDValue=LEDValue+100;
+
+  char string[20];
+  sprintf(string,"%d",LEDValue);
+  PrintToUART(string);
+  PrintToUART("\n");
+
+  LEDValue=LEDValue+STEP;
 }
 
 void RotaryEncoderLeft(void)
@@ -101,5 +139,11 @@ void RotaryEncoderLeft(void)
       LEDValue = 0;
   }
   pca9685_set_pin(LEDIndex,LEDValue);
-  LEDValue=LEDValue-100;
+
+  char string[20];
+  sprintf(string,"%d",LEDValue);
+  PrintToUART(string);
+  PrintToUART("\n");
+
+  LEDValue=LEDValue-STEP;
 }

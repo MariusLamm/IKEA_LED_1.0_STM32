@@ -76,7 +76,7 @@ void SystemClock_Config(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-  PrintToUART("IKEA LED V1.00\n");
+
   /* USER CODE END 1 */
 
   /* MCU Configuration----------------------------------------------------------*/
@@ -104,7 +104,7 @@ int main(void)
   pca9685_init();
 
   /* USER CODE END 2 */
-
+  PrintToUART("IKEA LED V1.00\n");
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
