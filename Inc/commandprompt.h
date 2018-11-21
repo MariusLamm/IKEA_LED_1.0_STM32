@@ -23,6 +23,7 @@ extern void _Error_Handler(char *, int);
 /* USER CODE BEGIN Prototypes */
 void Mainmenu(void);
 void getCommand(void);
+void WriteRTC(void);
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus

@@ -2,6 +2,7 @@
 #include "usart.h"
 #include "string.h"
 #include "gpio.h"
+#include "commandprompt.h"
 
 
 
@@ -18,7 +19,7 @@ void getCommand(void)
 {
   PrintToUART("type command:\n");
   char in[25];
-  ReadFromUART(char *in[]);
+  ReadFromUART(in);
   PrintToUART("\n");
 
   if(in[0]=='r'){
@@ -29,5 +30,24 @@ void getCommand(void)
     PrintToUART("command to set led: s, LED(1-10), brightness(0-255) \n");
     PrintToUART("e.g.: 's,1,100' set LED1 to brightness 100\n");
   }
+
+}
+
+void WriteRTC(void)
+{
+
+  PrintToUART("set hours for RTC:\n");
+  char Hours[1];
+  ReadFromUART(Hours);
+  PrintToUART(Hours);
+  PrintToUART("\n");
+
+  PrintToUART("set minutes for RTC:\n");
+  char Minutes[1];
+  ReadFromUART(Minutes);
+  PrintToUART(Minutes);
+  PrintToUART("\n");
+
+  RTC_Set_Hours_Minutes(Hours,Minutes);
 
 }

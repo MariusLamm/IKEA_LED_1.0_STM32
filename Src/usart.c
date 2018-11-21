@@ -131,7 +131,7 @@ void PrintToUART(char _out[])
 
 void ReadFromUART(char in[])
 {
-  HAL_UART_Receive(&huart2, (uint8_t *)in, 25, 1000);
+  HAL_UART_Receive(&huart2, (uint8_t *)in, 25, 5000);
 }
 
 /* USER CODE END 1 */

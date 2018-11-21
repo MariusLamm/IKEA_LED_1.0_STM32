@@ -2,6 +2,7 @@
 #include "stm32f0xx_hal.h"
 #include "rotaryencoder.h"
 #include "pca9685.h"
+#include "usart.h"
 
 #define STEP 20
 
@@ -105,11 +106,10 @@ uint32_t LEDValue =0;
 /*If encoder Button is Pressed do something*/
 void EncoderButtonPressed(void)
 {
-  if(LEDIndex == 9){
+  if(LEDIndex >9){
     LEDIndex = 0;
   }
-  pca9685_set_pin(LEDIndex,LEDValue);
-
+  
   char string[20];
   sprintf(string,"%d",LEDIndex);
   PrintToUART(string);
