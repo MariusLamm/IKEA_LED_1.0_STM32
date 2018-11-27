@@ -11,6 +11,7 @@ void checkRotationDirection(void);
 void EncoderButtonPressed(void);
 void RotaryEncoderRight(void);
 void RotaryEncoderLeft(void);
+uint8_t mapIndiexOfLED(uint8_t);
 
 
 /* USER CODE END Prototypes */

@@ -106,16 +106,17 @@ uint32_t LEDValue =0;
 /*If encoder Button is Pressed do something*/
 void EncoderButtonPressed(void)
 {
+  LEDIndex++;
+
   if(LEDIndex >9){
     LEDIndex = 0;
   }
-  
+
   char string[20];
   sprintf(string,"%d",LEDIndex);
   PrintToUART(string);
   PrintToUART("\n");
 
-  LEDIndex++;
 }
 
 void RotaryEncoderRight(void)
@@ -123,7 +124,7 @@ void RotaryEncoderRight(void)
   if(LEDValue > 4000){
       LEDValue = 0;
   }
-  pca9685_set_pin(LEDIndex,LEDValue);
+  pca9685_set_pin(mapIndiexOfLED(LEDIndex),LEDValue);
 
   char string[20];
   sprintf(string,"%d",LEDValue);
@@ -146,4 +147,47 @@ void RotaryEncoderLeft(void)
   PrintToUART("\n");
 
   LEDValue=LEDValue-STEP;
+}
+
+
+
+
+/*hardware index don't match, see hardware layout of the IKEA LED
+TODO: Fix Layout in version 2.0
+*/
+uint8_t mapIndiexOfLED(uint8_t index)
+{
+  if(index == 0){
+    return 0;
+  }
+  if(index == 1){
+    return 5;
+  }
+  if(index == 2){
+    return 1;
+  }
+  if(index == 3){
+    return 6;
+  }
+  if(index == 4){
+    return 2;
+  }
+  if(index == 5){
+    return 7;
+  }
+  if(index == 6){
+    return 3;
+  }
+  if(index == 7){
+    return 8;
+  }
+  if(index == 8){
+    return 4;
+  }
+  if(index == 9){
+    return 9;
+  }
+  else
+    return 0;
+
 }
