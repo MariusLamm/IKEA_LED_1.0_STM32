@@ -37,9 +37,7 @@ void WriteRTC(void)
 {
 
   PrintToUART("set hours for RTC:\n");
-  char Hours[1];
-  ReadFromUART(Hours);
-  PrintToUART(Hours);
+  
   PrintToUART("\n");
 
   PrintToUART("set minutes for RTC:\n");

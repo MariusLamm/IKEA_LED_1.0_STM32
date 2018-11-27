@@ -110,7 +110,7 @@ int main(void)
   /* USER CODE END 2 */
   PrintToUART("IKEA LED V1.00\n");
   RTC_Set_Hours_Minutes(12,00); //default
-  //WriteRTC();
+  WriteRTC();
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
@@ -119,7 +119,7 @@ int main(void)
   {
 
   /* USER CODE END WHILE */
-  /*Read RTC Minutes and Hours*/
+  /*Read RTC Minutes and Hours and display on UART*/
   RTC_CalendarShow(Time, Date);
   sprintf(sTime,"%02d:%02d:%02d\n",Time[0],Time[1],Time[2]);
   PrintToUART(sTime);

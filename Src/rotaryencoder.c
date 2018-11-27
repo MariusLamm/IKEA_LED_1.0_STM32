@@ -4,6 +4,8 @@
 #include "pca9685.h"
 #include "usart.h"
 
+/*Step for brightness of the LED string 0 to 4000*/
+/*TODO: move to LED string controll function*/
 #define STEP 20
 
 /*
@@ -46,20 +48,54 @@ uint8_t sequenz_B=0;
 
 uint8_t position=0;
 
+/*Index for LEDstring*/
+uint8_t LEDIndex =0;
+/*Value for LEDstring*/
+uint32_t LEDValue =0;
 
-void setRotAState(void)
+
+
+
+/*Flags for RotA und RotB */
+/*Flags get set by Interrupt*/
+uint8_t RotAFlag =0;
+uint8_t RotBFlag =0;
+
+void setRotAFlag(void)
 {
-  RotaryEncoderRight();
+  RotAFlag =1;
 }
 
-void setRotBState(void)
+void setRotBFlag(void)
 {
-  RotaryEncoderRight();
+  RotBFlag =1;
+}
+
+void resetRotAFlag(void)
+{
+  RotAFlag =0;
+}
+
+void resetRotBFlag(void)
+{
+    RotBFlag =0;
+}
+
+uint8_t getRotAFlag(void)
+{
+    return RotAFlag;
+}
+
+uint8_t getRotBFlag(void)
+{
+    return RotBFlag;
 }
 
 
 
 
+/*-----------------------------------------------------------------------------*/
+/*TODO: implement working rotation detection.*/
 
 void checkRotationDirection(void)
 {
@@ -89,31 +125,6 @@ void checkRotationDirection(void)
 
   char string[20];
   sprintf(string,"%d",position);
-  PrintToUART(string);
-  PrintToUART("\n");
-
-
-
-}
-
-
-/*Index for LEDstring*/
-uint8_t LEDIndex =0;
-/*Value for LEDstring*/
-uint32_t LEDValue =0;
-/*Set inital Values*/
-
-/*If encoder Button is Pressed do something*/
-void EncoderButtonPressed(void)
-{
-  LEDIndex++;
-
-  if(LEDIndex >9){
-    LEDIndex = 0;
-  }
-
-  char string[20];
-  sprintf(string,"%d",LEDIndex);
   PrintToUART(string);
   PrintToUART("\n");
 
@@ -149,7 +160,24 @@ void RotaryEncoderLeft(void)
   LEDValue=LEDValue-STEP;
 }
 
+/*-----------------------------------------------------------------------------*/
 
+
+
+/*If encoder Button is Pressed do something*/
+void EncoderButtonPressed(void)
+{
+  LEDIndex++;
+
+  if(LEDIndex >9){
+    LEDIndex = 0;
+  }
+
+  char string[20];
+  sprintf(string,"%d",LEDIndex);
+  PrintToUART(string);
+  PrintToUART("\n");
+}
 
 
 /*hardware index don't match, see hardware layout of the IKEA LED

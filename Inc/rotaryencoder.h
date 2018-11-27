@@ -4,14 +4,21 @@
 
 
 /* USER CODE BEGIN Prototypes */
-void setRotAState(void);
-void setRotBState(void);
-void checkRotationDirection(void);
+void setRotAFlag(void);
+void setRotBFlag(void);
+void resetRotAFlag(void);
+void resetRotBFlag(void);
+uint8_t getRotBFlag(void);
+uint8_t getRotAFlag(void);
 
+
+void checkRotationDirection(void);
 void EncoderButtonPressed(void);
+
 void RotaryEncoderRight(void);
 void RotaryEncoderLeft(void);
 uint8_t mapIndiexOfLED(uint8_t);
+
 
 
 /* USER CODE END Prototypes */
