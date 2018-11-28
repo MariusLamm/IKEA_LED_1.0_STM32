@@ -33,7 +33,7 @@ void stateMachine()
 
   else if(state == S3){
     state3();
-    state = S1;
+    state = S2;
   }
 
   else{
@@ -42,7 +42,7 @@ void stateMachine()
 }
 
 
-/* write RTc with Rotary Encoder */
+/* write RTC with Rotary Encoder */
 void state1()
 {
   PrintToUART("set hours for RTC:\n");
@@ -76,21 +76,9 @@ void state1()
   resetButton1Flag();
 }
 
-
-/*Display time on UART*/
-void state2()
-{
-  /*Read RTC Minutes and Hours and display on UART*/
-  RTC_CalendarShow(Time, Date);
-  sprintf(sTime,"%02d:%02d:%02d\n",Time[0],Time[1],Time[2]);
-  PrintToUART(sTime);
-  HAL_Delay(5000);
-}
-
-
 /*Get Data from Rotary Encoder
 and set LED String with Value and Index*/
-void state3()
+void state2()
 {
   PrintToUART("set Index of LED String (0-9):\n");
   PrintToUART("turn rotary encoder left/right\n");
@@ -112,4 +100,14 @@ void state3()
 
   /*Reset Button 1 Flag */
   resetButton1Flag();
+}
+
+/*Display time on UART*/
+void state3()
+{
+  /*Read RTC Minutes and Hours and display on UART*/
+  RTC_CalendarShow(Time, Date);
+  sprintf(sTime,"%02d:%02d:%02d\n",Time[0],Time[1],Time[2]);
+  PrintToUART(sTime);
+  HAL_Delay(5000);
 }
