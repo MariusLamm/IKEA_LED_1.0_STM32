@@ -5,12 +5,16 @@
 
 /* USER CODE BEGIN Prototypes */
 void setRotAFlag(void);
-void setRotBFlag(void);
 void resetRotAFlag(void);
-void resetRotBFlag(void);
-uint8_t getRotBFlag(void);
 uint8_t getRotAFlag(void);
 
+void setRotBFlag(void);
+void resetRotBFlag(void);
+uint8_t getRotBFlag(void);
+
+void setButton1Flag(void);
+void resetButton1Flag(void);
+uint8_t getButton1Flag(void);
 
 void checkRotationDirection(void);
 void EncoderButtonPressed(void);

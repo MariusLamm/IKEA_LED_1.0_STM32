@@ -32,20 +32,3 @@ void getCommand(void)
   }
 
 }
-
-void WriteRTC(void)
-{
-
-  PrintToUART("set hours for RTC:\n");
-  
-  PrintToUART("\n");
-
-  PrintToUART("set minutes for RTC:\n");
-  char Minutes[1];
-  ReadFromUART(Minutes);
-  PrintToUART(Minutes);
-  PrintToUART("\n");
-
-  RTC_Set_Hours_Minutes(Hours,Minutes);
-
-}

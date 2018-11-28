@@ -135,7 +135,7 @@ void HAL_RTC_MspDeInit(RTC_HandleTypeDef* rtcHandle)
   * @param  None
   * @retval None
   */
-void RTC_Set_Hours_Minutes(uint16_t hours, uint16_t minutes)
+void RTC_Set_Hours_Minutes_Seconds(uint16_t hours, uint16_t minutes, uint16_t seconds)
 {
   RTC_DateTypeDef sdatestructure;
   RTC_TimeTypeDef stimestructure;
@@ -157,7 +157,7 @@ void RTC_Set_Hours_Minutes(uint16_t hours, uint16_t minutes)
   /* Set Time: 02:00:00 */
   stimestructure.Hours = hours;
   stimestructure.Minutes = minutes;
-  stimestructure.Seconds = 0x00;
+  stimestructure.Seconds = seconds;
   stimestructure.TimeFormat = RTC_HOURFORMAT12_AM;
   stimestructure.DayLightSaving = RTC_DAYLIGHTSAVING_NONE;
   stimestructure.StoreOperation = RTC_STOREOPERATION_RESET;

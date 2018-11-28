@@ -78,8 +78,7 @@ void SystemClock_Config(void);
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-  uint8_t Time[10];
-  uint8_t Date[10];
+
 
   /* USER CODE END 1 */
 
@@ -109,21 +108,16 @@ int main(void)
 
   /* USER CODE END 2 */
   PrintToUART("IKEA LED V1.00\n");
-  RTC_Set_Hours_Minutes(12,00); //default
-  WriteRTC();
+  RTC_Set_Hours_Minutes_Seconds(12,00,00); //default 12:00:00
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  char sTime[20];
+
   while (1)
   {
 
   /* USER CODE END WHILE */
-  /*Read RTC Minutes and Hours and display on UART*/
-  RTC_CalendarShow(Time, Date);
-  sprintf(sTime,"%02d:%02d:%02d\n",Time[0],Time[1],Time[2]);
-  PrintToUART(sTime);
-  HAL_Delay(5000);
+
 
   /* USER CODE BEGIN 3 */
 

@@ -135,19 +135,19 @@ void EXTI4_15_IRQHandler(void)
   /*Interrupt Handler for Button1*/
   if(__HAL_GPIO_EXTI_GET_FLAG(GPIO_PIN_7))
   {
-    EncoderButtonPressed();
+    setButton1Flag();
   }
 
   /*Interrupt Handler for Rot A*/
   if(__HAL_GPIO_EXTI_GET_FLAG(GPIO_PIN_8))
   {
-    setRotAState();
+    setRotAFlag();
   }
 
   /*Interrupt Handler for Rot B*/
   if(__HAL_GPIO_EXTI_GET_FLAG(GPIO_PIN_9))
   {
-    setRotBState();
+    setRotBFlag();
   }
 
   /* USER CODE END EXTI4_15_IRQn 0 */

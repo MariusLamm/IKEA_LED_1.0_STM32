@@ -6,7 +6,7 @@
   ******************************************************************************
   ** This notice applies to any and all portions of this file
   * that are not between comment pairs USER CODE BEGIN and
-  * USER CODE END. Other portions of this file, whether 
+  * USER CODE END. Other portions of this file, whether
   * inserted by the user or by software development tools
   * are owned by their respective copyright owners.
   *
@@ -62,7 +62,7 @@ extern void _Error_Handler(char *, int);
 void MX_RTC_Init(void);
 
 /* USER CODE BEGIN Prototypes */
-void RTC_Set_Hours_Minutes(uint16_t hours, uint16_t minutes);
+void RTC_Set_Hours_Minutes_Seconds(uint16_t hours, uint16_t minutes, uint16_t seconds);
 void RTC_CalendarShow(uint8_t *showtime, uint8_t *showdate);
 
 /* USER CODE END Prototypes */

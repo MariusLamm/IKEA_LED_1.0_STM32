@@ -60,7 +60,9 @@ uint32_t LEDValue =0;
 /*Flags get set by Interrupt*/
 uint8_t RotAFlag =0;
 uint8_t RotBFlag =0;
+uint8_t Button1Flag =0;
 
+/*Rotary Encoder Flag A*/
 void setRotAFlag(void)
 {
   RotAFlag =1;
@@ -76,6 +78,7 @@ void resetRotAFlag(void)
   RotAFlag =0;
 }
 
+/*Rotary Encoder Flag B*/
 void resetRotBFlag(void)
 {
     RotBFlag =0;
@@ -91,7 +94,21 @@ uint8_t getRotBFlag(void)
     return RotBFlag;
 }
 
+/*Rotary Encoder Button 1 Flag*/
+void setButton1Flag(void)
+{
+  Button1Flag =1;
+}
 
+void resetButton1Flag(void)
+{
+  Button1Flag =0;
+}
+
+uint8_t getButton1Flag(void)
+{
+    return Button1Flag;
+}
 
 
 /*-----------------------------------------------------------------------------*/
@@ -161,61 +178,3 @@ void RotaryEncoderLeft(void)
 }
 
 /*-----------------------------------------------------------------------------*/
-
-
-
-/*If encoder Button is Pressed do something*/
-void EncoderButtonPressed(void)
-{
-  LEDIndex++;
-
-  if(LEDIndex >9){
-    LEDIndex = 0;
-  }
-
-  char string[20];
-  sprintf(string,"%d",LEDIndex);
-  PrintToUART(string);
-  PrintToUART("\n");
-}
-
-
-/*hardware index don't match, see hardware layout of the IKEA LED
-TODO: Fix Layout in version 2.0
-*/
-uint8_t mapIndiexOfLED(uint8_t index)
-{
-  if(index == 0){
-    return 0;
-  }
-  if(index == 1){
-    return 5;
-  }
-  if(index == 2){
-    return 1;
-  }
-  if(index == 3){
-    return 6;
-  }
-  if(index == 4){
-    return 2;
-  }
-  if(index == 5){
-    return 7;
-  }
-  if(index == 6){
-    return 3;
-  }
-  if(index == 7){
-    return 8;
-  }
-  if(index == 8){
-    return 4;
-  }
-  if(index == 9){
-    return 9;
-  }
-  else
-    return 0;
-
-}
