@@ -108,11 +108,9 @@ Discarded input sections
  .text.checkRotationDirection
                 0x00000000       0x94 build/rotaryencoder.o
  .text.RotaryEncoderRight
-                0x00000000       0x58 build/rotaryencoder.o
+                0x00000000        0x2 build/rotaryencoder.o
  .text.RotaryEncoderLeft
-                0x00000000       0x40 build/rotaryencoder.o
- .bss.LEDIndex  0x00000000        0x1 build/rotaryencoder.o
- .bss.LEDValue  0x00000000        0x4 build/rotaryencoder.o
+                0x00000000        0x2 build/rotaryencoder.o
  .bss.Rot_A_State
                 0x00000000        0x1 build/rotaryencoder.o
  .bss.Rot_B_State
@@ -1637,73 +1635,73 @@ LOAD c:/program files (x86)/gnu tools arm embedded/7 2018-q2-update/bin/../lib/g
                 0x000004c3       0x1e c:/program files (x86)/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m/crtn.o
 OUTPUT(build/IKEA_LED_STM32.elf elf32-littlearm)
 
-.debug_info     0x00000000    0x19c77
- .debug_info    0x00000000     0x1441 build/rotaryencoder.o
- .debug_info    0x00001441     0x1b42 build/main.o
- .debug_info    0x00002f83     0x147f build/pca9685.o
- .debug_info    0x00004402      0xe34 build/gpio.o
- .debug_info    0x00005236     0x14a1 build/i2c.o
- .debug_info    0x000066d7     0x1712 build/rtc.o
- .debug_info    0x00007de9     0x1414 build/usart.o
- .debug_info    0x000091fd      0xbc2 build/stm32f0xx_it.o
- .debug_info    0x00009dbf      0xc6b build/stm32f0xx_hal_msp.o
- .debug_info    0x0000aa2a     0x3c85 build/stm32f0xx_hal_i2c.o
- .debug_info    0x0000e6af     0x1202 build/stm32f0xx_hal_i2c_ex.o
- .debug_info    0x0000f8b1     0x1691 build/stm32f0xx_hal_rtc.o
- .debug_info    0x00010f42     0x22b9 build/stm32f0xx_hal_uart.o
- .debug_info    0x000131fb     0x12da build/stm32f0xx_hal_rcc.o
- .debug_info    0x000144d5      0xd27 build/stm32f0xx_hal_rcc_ex.o
- .debug_info    0x000151fc      0xfe7 build/stm32f0xx_hal.o
- .debug_info    0x000161e3      0xfbb build/stm32f0xx_hal_gpio.o
- .debug_info    0x0001719e     0x1130 build/stm32f0xx_hal_cortex.o
- .debug_info    0x000182ce      0xe08 build/stm32f0xx_hal_pwr.o
- .debug_info    0x000190d6      0xb7f build/system_stm32f0xx.o
- .debug_info    0x00019c55       0x22 build/startup_stm32f030xc.o
+.debug_info     0x00000000    0x19b48
+ .debug_info    0x00000000     0x1338 build/rotaryencoder.o
+ .debug_info    0x00001338     0x1b1c build/main.o
+ .debug_info    0x00002e54     0x147f build/pca9685.o
+ .debug_info    0x000042d3      0xe34 build/gpio.o
+ .debug_info    0x00005107     0x14a1 build/i2c.o
+ .debug_info    0x000065a8     0x1712 build/rtc.o
+ .debug_info    0x00007cba     0x1414 build/usart.o
+ .debug_info    0x000090ce      0xbc2 build/stm32f0xx_it.o
+ .debug_info    0x00009c90      0xc6b build/stm32f0xx_hal_msp.o
+ .debug_info    0x0000a8fb     0x3c85 build/stm32f0xx_hal_i2c.o
+ .debug_info    0x0000e580     0x1202 build/stm32f0xx_hal_i2c_ex.o
+ .debug_info    0x0000f782     0x1691 build/stm32f0xx_hal_rtc.o
+ .debug_info    0x00010e13     0x22b9 build/stm32f0xx_hal_uart.o
+ .debug_info    0x000130cc     0x12da build/stm32f0xx_hal_rcc.o
+ .debug_info    0x000143a6      0xd27 build/stm32f0xx_hal_rcc_ex.o
+ .debug_info    0x000150cd      0xfe7 build/stm32f0xx_hal.o
+ .debug_info    0x000160b4      0xfbb build/stm32f0xx_hal_gpio.o
+ .debug_info    0x0001706f     0x1130 build/stm32f0xx_hal_cortex.o
+ .debug_info    0x0001819f      0xe08 build/stm32f0xx_hal_pwr.o
+ .debug_info    0x00018fa7      0xb7f build/system_stm32f0xx.o
+ .debug_info    0x00019b26       0x22 build/startup_stm32f030xc.o
 
-.debug_abbrev   0x00000000     0x3296
- .debug_abbrev  0x00000000      0x271 build/rotaryencoder.o
- .debug_abbrev  0x00000271      0x27a build/main.o
- .debug_abbrev  0x000004eb      0x2c1 build/pca9685.o
- .debug_abbrev  0x000007ac      0x228 build/gpio.o
- .debug_abbrev  0x000009d4      0x259 build/i2c.o
- .debug_abbrev  0x00000c2d      0x26a build/rtc.o
- .debug_abbrev  0x00000e97      0x24a build/usart.o
- .debug_abbrev  0x000010e1      0x1f4 build/stm32f0xx_it.o
- .debug_abbrev  0x000012d5      0x216 build/stm32f0xx_hal_msp.o
- .debug_abbrev  0x000014eb      0x329 build/stm32f0xx_hal_i2c.o
- .debug_abbrev  0x00001814      0x247 build/stm32f0xx_hal_i2c_ex.o
- .debug_abbrev  0x00001a5b      0x2cf build/stm32f0xx_hal_rtc.o
- .debug_abbrev  0x00001d2a      0x2e1 build/stm32f0xx_hal_uart.o
- .debug_abbrev  0x0000200b      0x2e6 build/stm32f0xx_hal_rcc.o
- .debug_abbrev  0x000022f1      0x287 build/stm32f0xx_hal_rcc_ex.o
- .debug_abbrev  0x00002578      0x2d9 build/stm32f0xx_hal.o
- .debug_abbrev  0x00002851      0x2be build/stm32f0xx_hal_gpio.o
- .debug_abbrev  0x00002b0f      0x32e build/stm32f0xx_hal_cortex.o
- .debug_abbrev  0x00002e3d      0x261 build/stm32f0xx_hal_pwr.o
- .debug_abbrev  0x0000309e      0x1e6 build/system_stm32f0xx.o
- .debug_abbrev  0x00003284       0x12 build/startup_stm32f030xc.o
+.debug_abbrev   0x00000000     0x327e
+ .debug_abbrev  0x00000000      0x266 build/rotaryencoder.o
+ .debug_abbrev  0x00000266      0x26d build/main.o
+ .debug_abbrev  0x000004d3      0x2c1 build/pca9685.o
+ .debug_abbrev  0x00000794      0x228 build/gpio.o
+ .debug_abbrev  0x000009bc      0x259 build/i2c.o
+ .debug_abbrev  0x00000c15      0x26a build/rtc.o
+ .debug_abbrev  0x00000e7f      0x24a build/usart.o
+ .debug_abbrev  0x000010c9      0x1f4 build/stm32f0xx_it.o
+ .debug_abbrev  0x000012bd      0x216 build/stm32f0xx_hal_msp.o
+ .debug_abbrev  0x000014d3      0x329 build/stm32f0xx_hal_i2c.o
+ .debug_abbrev  0x000017fc      0x247 build/stm32f0xx_hal_i2c_ex.o
+ .debug_abbrev  0x00001a43      0x2cf build/stm32f0xx_hal_rtc.o
+ .debug_abbrev  0x00001d12      0x2e1 build/stm32f0xx_hal_uart.o
+ .debug_abbrev  0x00001ff3      0x2e6 build/stm32f0xx_hal_rcc.o
+ .debug_abbrev  0x000022d9      0x287 build/stm32f0xx_hal_rcc_ex.o
+ .debug_abbrev  0x00002560      0x2d9 build/stm32f0xx_hal.o
+ .debug_abbrev  0x00002839      0x2be build/stm32f0xx_hal_gpio.o
+ .debug_abbrev  0x00002af7      0x32e build/stm32f0xx_hal_cortex.o
+ .debug_abbrev  0x00002e25      0x261 build/stm32f0xx_hal_pwr.o
+ .debug_abbrev  0x00003086      0x1e6 build/system_stm32f0xx.o
+ .debug_abbrev  0x0000326c       0x12 build/startup_stm32f030xc.o
 
-.debug_loc      0x00000000     0x8ac9
- .debug_loc     0x00000000       0xb5 build/rotaryencoder.o
- .debug_loc     0x000000b5       0x4d build/main.o
- .debug_loc     0x00000102      0x451 build/pca9685.o
- .debug_loc     0x00000553       0x2c build/gpio.o
- .debug_loc     0x0000057f      0x235 build/i2c.o
- .debug_loc     0x000007b4      0x134 build/rtc.o
- .debug_loc     0x000008e8      0x178 build/usart.o
- .debug_loc     0x00000a60       0x40 build/stm32f0xx_it.o
- .debug_loc     0x00000aa0       0x2c build/stm32f0xx_hal_msp.o
- .debug_loc     0x00000acc     0x4240 build/stm32f0xx_hal_i2c.o
- .debug_loc     0x00004d0c      0x21f build/stm32f0xx_hal_i2c_ex.o
- .debug_loc     0x00004f2b      0xce1 build/stm32f0xx_hal_rtc.o
- .debug_loc     0x00005c0c     0x1b1b build/stm32f0xx_hal_uart.o
- .debug_loc     0x00007727      0x558 build/stm32f0xx_hal_rcc.o
- .debug_loc     0x00007c7f      0x3a5 build/stm32f0xx_hal_rcc_ex.o
- .debug_loc     0x00008024      0x108 build/stm32f0xx_hal.o
- .debug_loc     0x0000812c      0x3a2 build/stm32f0xx_hal_gpio.o
- .debug_loc     0x000084ce      0x3d3 build/stm32f0xx_hal_cortex.o
- .debug_loc     0x000088a1       0xe8 build/stm32f0xx_hal_pwr.o
- .debug_loc     0x00008989      0x140 build/system_stm32f0xx.o
+.debug_loc      0x00000000     0x8a71
+ .debug_loc     0x00000000       0x5d build/rotaryencoder.o
+ .debug_loc     0x0000005d       0x4d build/main.o
+ .debug_loc     0x000000aa      0x451 build/pca9685.o
+ .debug_loc     0x000004fb       0x2c build/gpio.o
+ .debug_loc     0x00000527      0x235 build/i2c.o
+ .debug_loc     0x0000075c      0x134 build/rtc.o
+ .debug_loc     0x00000890      0x178 build/usart.o
+ .debug_loc     0x00000a08       0x40 build/stm32f0xx_it.o
+ .debug_loc     0x00000a48       0x2c build/stm32f0xx_hal_msp.o
+ .debug_loc     0x00000a74     0x4240 build/stm32f0xx_hal_i2c.o
+ .debug_loc     0x00004cb4      0x21f build/stm32f0xx_hal_i2c_ex.o
+ .debug_loc     0x00004ed3      0xce1 build/stm32f0xx_hal_rtc.o
+ .debug_loc     0x00005bb4     0x1b1b build/stm32f0xx_hal_uart.o
+ .debug_loc     0x000076cf      0x558 build/stm32f0xx_hal_rcc.o
+ .debug_loc     0x00007c27      0x3a5 build/stm32f0xx_hal_rcc_ex.o
+ .debug_loc     0x00007fcc      0x108 build/stm32f0xx_hal.o
+ .debug_loc     0x000080d4      0x3a2 build/stm32f0xx_hal_gpio.o
+ .debug_loc     0x00008476      0x3d3 build/stm32f0xx_hal_cortex.o
+ .debug_loc     0x00008849       0xe8 build/stm32f0xx_hal_pwr.o
+ .debug_loc     0x00008931      0x140 build/system_stm32f0xx.o
 
 .debug_aranges  0x00000000      0xa70
  .debug_aranges
@@ -1772,71 +1770,71 @@ OUTPUT(build/IKEA_LED_STM32.elf elf32-littlearm)
  .debug_ranges  0x00000968       0x18 build/system_stm32f0xx.o
  .debug_ranges  0x00000980       0x20 build/startup_stm32f030xc.o
 
-.debug_line     0x00000000     0x5eab
- .debug_line    0x00000000      0x3f6 build/rotaryencoder.o
- .debug_line    0x000003f6      0x37f build/main.o
- .debug_line    0x00000775      0x335 build/pca9685.o
- .debug_line    0x00000aaa      0x255 build/gpio.o
- .debug_line    0x00000cff      0x304 build/i2c.o
- .debug_line    0x00001003      0x30b build/rtc.o
- .debug_line    0x0000130e      0x2f6 build/usart.o
- .debug_line    0x00001604      0x2d9 build/stm32f0xx_it.o
- .debug_line    0x000018dd      0x240 build/stm32f0xx_hal_msp.o
- .debug_line    0x00001b1d     0x13c8 build/stm32f0xx_hal_i2c.o
- .debug_line    0x00002ee5      0x332 build/stm32f0xx_hal_i2c_ex.o
- .debug_line    0x00003217      0x5ed build/stm32f0xx_hal_rtc.o
- .debug_line    0x00003804      0xca3 build/stm32f0xx_hal_uart.o
- .debug_line    0x000044a7      0x51a build/stm32f0xx_hal_rcc.o
- .debug_line    0x000049c1      0x379 build/stm32f0xx_hal_rcc_ex.o
- .debug_line    0x00004d3a      0x40c build/stm32f0xx_hal.o
- .debug_line    0x00005146      0x3bb build/stm32f0xx_hal_gpio.o
- .debug_line    0x00005501      0x3ab build/stm32f0xx_hal_cortex.o
- .debug_line    0x000058ac      0x34d build/stm32f0xx_hal_pwr.o
- .debug_line    0x00005bf9      0x23a build/system_stm32f0xx.o
- .debug_line    0x00005e33       0x78 build/startup_stm32f030xc.o
+.debug_line     0x00000000     0x5e82
+ .debug_line    0x00000000      0x3cd build/rotaryencoder.o
+ .debug_line    0x000003cd      0x37f build/main.o
+ .debug_line    0x0000074c      0x335 build/pca9685.o
+ .debug_line    0x00000a81      0x255 build/gpio.o
+ .debug_line    0x00000cd6      0x304 build/i2c.o
+ .debug_line    0x00000fda      0x30b build/rtc.o
+ .debug_line    0x000012e5      0x2f6 build/usart.o
+ .debug_line    0x000015db      0x2d9 build/stm32f0xx_it.o
+ .debug_line    0x000018b4      0x240 build/stm32f0xx_hal_msp.o
+ .debug_line    0x00001af4     0x13c8 build/stm32f0xx_hal_i2c.o
+ .debug_line    0x00002ebc      0x332 build/stm32f0xx_hal_i2c_ex.o
+ .debug_line    0x000031ee      0x5ed build/stm32f0xx_hal_rtc.o
+ .debug_line    0x000037db      0xca3 build/stm32f0xx_hal_uart.o
+ .debug_line    0x0000447e      0x51a build/stm32f0xx_hal_rcc.o
+ .debug_line    0x00004998      0x379 build/stm32f0xx_hal_rcc_ex.o
+ .debug_line    0x00004d11      0x40c build/stm32f0xx_hal.o
+ .debug_line    0x0000511d      0x3bb build/stm32f0xx_hal_gpio.o
+ .debug_line    0x000054d8      0x3ab build/stm32f0xx_hal_cortex.o
+ .debug_line    0x00005883      0x34d build/stm32f0xx_hal_pwr.o
+ .debug_line    0x00005bd0      0x23a build/system_stm32f0xx.o
+ .debug_line    0x00005e0a       0x78 build/startup_stm32f030xc.o
 
-.debug_str      0x00000000     0x305b
- .debug_str     0x00000000      0xaba build/rotaryencoder.o
-                                0xbd6 (size before relaxing)
- .debug_str     0x00000aba      0x8a0 build/main.o
-                               0x12ec (size before relaxing)
- .debug_str     0x0000135a       0xe6 build/pca9685.o
+.debug_str      0x00000000     0x303a
+ .debug_str     0x00000000      0xa89 build/rotaryencoder.o
+                                0xba5 (size before relaxing)
+ .debug_str     0x00000a89      0x8a0 build/main.o
+                               0x12e2 (size before relaxing)
+ .debug_str     0x00001329       0xf6 build/pca9685.o
                                 0xba4 (size before relaxing)
- .debug_str     0x00001440       0x7e build/gpio.o
+ .debug_str     0x0000141f       0x7e build/gpio.o
                                 0x874 (size before relaxing)
- .debug_str     0x000014be       0xd3 build/i2c.o
+ .debug_str     0x0000149d       0xd3 build/i2c.o
                                 0xc48 (size before relaxing)
- .debug_str     0x00001591      0x19a build/rtc.o
+ .debug_str     0x00001570      0x19a build/rtc.o
                                 0xd95 (size before relaxing)
- .debug_str     0x0000172b       0x85 build/usart.o
+ .debug_str     0x0000170a       0x85 build/usart.o
                                 0xbc1 (size before relaxing)
- .debug_str     0x000017b0       0xc9 build/stm32f0xx_it.o
+ .debug_str     0x0000178f       0xc9 build/stm32f0xx_it.o
                                 0x688 (size before relaxing)
- .debug_str     0x00001879       0x24 build/stm32f0xx_hal_msp.o
+ .debug_str     0x00001858       0x24 build/stm32f0xx_hal_msp.o
                                 0x7b0 (size before relaxing)
- .debug_str     0x0000189d      0x79c build/stm32f0xx_hal_i2c.o
+ .debug_str     0x0000187c      0x79c build/stm32f0xx_hal_i2c.o
                                0x127b (size before relaxing)
- .debug_str     0x00002039       0xab build/stm32f0xx_hal_i2c_ex.o
+ .debug_str     0x00002018       0xab build/stm32f0xx_hal_i2c_ex.o
                                 0xbb2 (size before relaxing)
- .debug_str     0x000020e4      0x1c0 build/stm32f0xx_hal_rtc.o
+ .debug_str     0x000020c3      0x1c0 build/stm32f0xx_hal_rtc.o
                                 0xa65 (size before relaxing)
- .debug_str     0x000022a4      0x5df build/stm32f0xx_hal_uart.o
+ .debug_str     0x00002283      0x5df build/stm32f0xx_hal_uart.o
                                0x1166 (size before relaxing)
- .debug_str     0x00002883      0x18d build/stm32f0xx_hal_rcc.o
+ .debug_str     0x00002862      0x18d build/stm32f0xx_hal_rcc.o
                                 0x9e1 (size before relaxing)
- .debug_str     0x00002a10       0x8a build/stm32f0xx_hal_rcc_ex.o
+ .debug_str     0x000029ef       0x8a build/stm32f0xx_hal_rcc_ex.o
                                 0x7a8 (size before relaxing)
- .debug_str     0x00002a9a      0x19c build/stm32f0xx_hal.o
+ .debug_str     0x00002a79      0x19c build/stm32f0xx_hal.o
                                 0x9f3 (size before relaxing)
- .debug_str     0x00002c36       0xa2 build/stm32f0xx_hal_gpio.o
+ .debug_str     0x00002c15       0xa2 build/stm32f0xx_hal_gpio.o
                                 0x808 (size before relaxing)
- .debug_str     0x00002cd8      0x191 build/stm32f0xx_hal_cortex.o
+ .debug_str     0x00002cb7      0x191 build/stm32f0xx_hal_cortex.o
                                 0x9fb (size before relaxing)
- .debug_str     0x00002e69      0x177 build/stm32f0xx_hal_pwr.o
+ .debug_str     0x00002e48      0x177 build/stm32f0xx_hal_pwr.o
                                 0x7ae (size before relaxing)
- .debug_str     0x00002fe0       0x57 build/system_stm32f0xx.o
+ .debug_str     0x00002fbf       0x57 build/system_stm32f0xx.o
                                 0x62e (size before relaxing)
- .debug_str     0x00003037       0x24 build/startup_stm32f030xc.o
+ .debug_str     0x00003016       0x24 build/startup_stm32f030xc.o
                                  0x4f (size before relaxing)
 
 .comment        0x00000000       0x7f
@@ -1862,29 +1860,29 @@ OUTPUT(build/IKEA_LED_STM32.elf elf32-littlearm)
  .comment       0x0000007f       0x80 build/stm32f0xx_hal_pwr.o
  .comment       0x0000007f       0x80 build/system_stm32f0xx.o
 
-.debug_frame    0x00000000     0x1c28
- .debug_frame   0x00000000       0xf8 build/rotaryencoder.o
- .debug_frame   0x000000f8       0x58 build/main.o
- .debug_frame   0x00000150       0xf8 build/pca9685.o
- .debug_frame   0x00000248       0x30 build/gpio.o
- .debug_frame   0x00000278       0x9c build/i2c.o
- .debug_frame   0x00000314       0x90 build/rtc.o
- .debug_frame   0x000003a4       0x9c build/usart.o
- .debug_frame   0x00000440       0x88 build/stm32f0xx_it.o
- .debug_frame   0x000004c8       0x2c build/stm32f0xx_hal_msp.o
- .debug_frame   0x000004f4      0x880 build/stm32f0xx_hal_i2c.o
- .debug_frame   0x00000d74       0x80 build/stm32f0xx_hal_i2c_ex.o
- .debug_frame   0x00000df4      0x254 build/stm32f0xx_hal_rtc.o
- .debug_frame   0x00001048      0x584 build/stm32f0xx_hal_uart.o
- .debug_frame   0x000015cc      0x14c build/stm32f0xx_hal_rcc.o
- .debug_frame   0x00001718       0x60 build/stm32f0xx_hal_rcc_ex.o
- .debug_frame   0x00001778      0x184 build/stm32f0xx_hal.o
- .debug_frame   0x000018fc       0xdc build/stm32f0xx_hal_gpio.o
- .debug_frame   0x000019d8       0xec build/stm32f0xx_hal_cortex.o
- .debug_frame   0x00001ac4       0xdc build/stm32f0xx_hal_pwr.o
- .debug_frame   0x00001ba0       0x3c build/system_stm32f0xx.o
- .debug_frame   0x00001bdc       0x2c c:/program files (x86)/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-init.o)
- .debug_frame   0x00001c08       0x20 c:/program files (x86)/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m\libgcc.a(_udivsi3.o)
+.debug_frame    0x00000000     0x1c10
+ .debug_frame   0x00000000       0xe0 build/rotaryencoder.o
+ .debug_frame   0x000000e0       0x58 build/main.o
+ .debug_frame   0x00000138       0xf8 build/pca9685.o
+ .debug_frame   0x00000230       0x30 build/gpio.o
+ .debug_frame   0x00000260       0x9c build/i2c.o
+ .debug_frame   0x000002fc       0x90 build/rtc.o
+ .debug_frame   0x0000038c       0x9c build/usart.o
+ .debug_frame   0x00000428       0x88 build/stm32f0xx_it.o
+ .debug_frame   0x000004b0       0x2c build/stm32f0xx_hal_msp.o
+ .debug_frame   0x000004dc      0x880 build/stm32f0xx_hal_i2c.o
+ .debug_frame   0x00000d5c       0x80 build/stm32f0xx_hal_i2c_ex.o
+ .debug_frame   0x00000ddc      0x254 build/stm32f0xx_hal_rtc.o
+ .debug_frame   0x00001030      0x584 build/stm32f0xx_hal_uart.o
+ .debug_frame   0x000015b4      0x14c build/stm32f0xx_hal_rcc.o
+ .debug_frame   0x00001700       0x60 build/stm32f0xx_hal_rcc_ex.o
+ .debug_frame   0x00001760      0x184 build/stm32f0xx_hal.o
+ .debug_frame   0x000018e4       0xdc build/stm32f0xx_hal_gpio.o
+ .debug_frame   0x000019c0       0xec build/stm32f0xx_hal_cortex.o
+ .debug_frame   0x00001aac       0xdc build/stm32f0xx_hal_pwr.o
+ .debug_frame   0x00001b88       0x3c build/system_stm32f0xx.o
+ .debug_frame   0x00001bc4       0x2c c:/program files (x86)/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-init.o)
+ .debug_frame   0x00001bf0       0x20 c:/program files (x86)/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v6-m\libgcc.a(_udivsi3.o)
 
 Cross Reference Table
 
@@ -2201,8 +2199,6 @@ HAL_UART_TxHalfCpltCallback                       build/stm32f0xx_hal_uart.o
 HardFault_Handler                                 build/stm32f0xx_it.o
 I2C1_IRQHandler                                   build/startup_stm32f030xc.o
 I2C2_IRQHandler                                   build/startup_stm32f030xc.o
-LEDIndex                                          build/rotaryencoder.o
-LEDValue                                          build/rotaryencoder.o
 Last_Rot_A_State                                  build/rotaryencoder.o
 Last_Rot_B_State                                  build/rotaryencoder.o
 MX_GPIO_Init                                      build/gpio.o
@@ -2424,7 +2420,6 @@ i2c_master_write                                  build/i2c.o
 main                                              build/main.o
                                                   build/startup_stm32f030xc.o
                                                   c:/program files (x86)/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v6-m/crt0.o
-mapIndiexOfLED                                    build/rotaryencoder.o
 memchr                                            c:/program files (x86)/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-memchr-stub.o)
                                                   c:/program files (x86)/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-nano-vfprintf_i.o)
                                                   c:/program files (x86)/gnu tools arm embedded/7 2018-q2-update/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v6-m\libc_nano.a(lib_a-nano-svfprintf.o)
@@ -2441,7 +2436,6 @@ pca9685_init                                      build/pca9685.o
                                                   build/main.o
 pca9685_set_frequency                             build/pca9685.o
 pca9685_set_pin                                   build/pca9685.o
-                                                  build/rotaryencoder.o
 pca9685_set_pwm                                   build/pca9685.o
 position                                          build/rotaryencoder.o
 resetButton1Flag                                  build/rotaryencoder.o

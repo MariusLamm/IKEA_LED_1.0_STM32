@@ -48,10 +48,7 @@ uint8_t sequenz_B=0;
 
 uint8_t position=0;
 
-/*Index for LEDstring*/
-uint8_t LEDIndex =0;
-/*Value for LEDstring*/
-uint32_t LEDValue =0;
+
 
 
 
@@ -149,21 +146,24 @@ void checkRotationDirection(void)
 
 void RotaryEncoderRight(void)
 {
+  /*
   if(LEDValue > 4000){
       LEDValue = 0;
   }
   pca9685_set_pin(mapIndiexOfLED(LEDIndex),LEDValue);
 
   char string[20];
-  sprintf(string,"%d",LEDValue);
+  //sprintf(string,"%d",LEDValue);
   PrintToUART(string);
   PrintToUART("\n");
 
   LEDValue=LEDValue+STEP;
+  */
 }
 
 void RotaryEncoderLeft(void)
 {
+  /*
   if(LEDValue < 0){
       LEDValue = 0;
   }
@@ -175,6 +175,7 @@ void RotaryEncoderLeft(void)
   PrintToUART("\n");
 
   LEDValue=LEDValue-STEP;
+  */
 }
 
 /*-----------------------------------------------------------------------------*/

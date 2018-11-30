@@ -6,6 +6,11 @@
 /* Variables -----------------------------------------------------------------*/
 char string[20];
 
+/*Index for LEDstring*/
+uint8_t LEDIndex =0;
+/*Value for LEDstring*/
+uint32_t LEDValue =0;
+
 /*Set Index of LED String*/
 void setLEDStringIndex(void)
 {
@@ -14,7 +19,6 @@ void setLEDStringIndex(void)
   if(LEDIndex >9){
     LEDIndex = 0;
   }
-
 
   sprintf(string,"%d",LEDIndex);
   PrintToUART(string);

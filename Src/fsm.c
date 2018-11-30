@@ -28,7 +28,7 @@ void stateMachine()
 
   else if(state == S2){
     state2();
-    state = S2;
+    state = S3;
   }
 
   else if(state == S3){
@@ -86,7 +86,7 @@ void state2()
   /*Wait for Conformation with Button 1*/
   while(getButton1Flag(); == 0)){
     //display the current position of LED Index
-    setLEDStringIndex();
+    setLEDStringIndex(); // TODO
   }
 
   PrintToUART("set Value of LED String (0-4000):\n");
@@ -95,7 +95,7 @@ void state2()
   /*Wait for Conformation with Button 1*/
   while(getButton1Flag(); == 0)){
     //display the current position of LED Value
-    setLEDStringValue();
+    setLEDStringValue(); // TODO
   }
 
   /*Reset Button 1 Flag */
